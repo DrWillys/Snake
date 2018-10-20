@@ -23,3 +23,6 @@ class Snake:
         else:
             next_head_coordinate.increment_x_coordinate(1)
         return next_head_coordinate
+
+    def check_self_collision(self):
+        return False

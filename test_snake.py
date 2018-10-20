@@ -22,6 +22,9 @@ class SnakeTestCase(unittest.TestCase):
         self.assertEqual(self.snake.get_next_head_coordinates(), Coordinates(50,49))
         self.assertEqual(self.snake.get_next_head_coordinates(), Coordinates(50,49))
 
+    def test_check_self_collision(self):
+        self.assertTrue(self.snake.check_self_collision())
+
 
 if __name__ == "__main__":
     unittest.main()
