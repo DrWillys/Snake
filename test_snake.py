@@ -23,7 +23,14 @@ class SnakeTestCase(unittest.TestCase):
         self.assertEqual(self.snake.get_next_head_coordinates(), Coordinates(50,49))
 
     def test_check_self_collision(self):
+        self.assertFalse(self.snake.check_self_collision())
+        self.snake.coordinates += [Coordinates(50, 50)]
         self.assertTrue(self.snake.check_self_collision())
+
+    def test_snake_should_grow(self):
+        self.assertFalse(self.snake.snake_should_grow)
+        self.snake.set_snake_should_grow(True)
+        self.assertTrue(self.snake.snake_should_grow)
 
 
 if __name__ == "__main__":
