@@ -1,6 +1,7 @@
 class Treat():
-    def __init__(self, coordinates):
-        self.coordiantes = coordinates
+    def __init__(self, coordinates, color):
+        self.coordinates = [coordinates]
+        self.color = color
 
     def get_coordinates(self):
-        return self.coordinates
+        return self.coordinates[0]

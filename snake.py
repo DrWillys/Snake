@@ -4,13 +4,14 @@ from copy import copy
 
 class Snake:
 
-    def __init__(self, coordinates):
+    def __init__(self, coordinates, color):
         self.coordinates = [coordinates]
         self.direction = Direction.UP
         self.snake_should_grow = False
+        self.color = color
 
     def time_step(self):
-        next_head_coordinate = self.get_next_head_coordinate()
+        next_head_coordinates = self.get_next_head_coordinates()
         self.move_snake(next_head_coordinates)
 
     def get_next_head_coordinates(self):
@@ -29,6 +30,8 @@ class Snake:
         self.coordinates = [next_head_coordinates] + self.coordinates
         if not self.snake_should_grow:
             self.coordinates = self.coordinates[:-1]
+        else:
+            self.snake_should_grow = False
 
     def set_snake_should_grow(self, snake_should_grow):
         self.snake_should_grow = snake_should_grow
@@ -41,3 +44,6 @@ class Snake:
 
     def get_snake_head(self):
         return self.coordinates[0]
+
+    def set_direction(self, direction):
+        self.direction = direction
