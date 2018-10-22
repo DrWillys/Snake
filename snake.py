@@ -6,7 +6,6 @@ class Snake:
 
     def __init__(self, coordinates):
         self.coordinates = [coordinates]
-        self.length = 1
         self.direction = Direction.UP
         self.snake_should_grow = False
 
@@ -39,3 +38,6 @@ class Snake:
             if coordinate == self.coordinates[0]:
                 return True
         return False
+
+    def get_snake_head(self):
+        return self.coordinates[0]
